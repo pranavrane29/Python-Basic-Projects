@@ -45,3 +45,36 @@ string = input("Enter a string - ")
 analyze_string(string)
 
 
+#----------------------------------------------------------------------------------------------------------
+
+#Q3. (Lists + Functions + Exception Handling)
+
+def manage_marks() :
+    try :    
+        mark1 = int(input("Enter your marks in subject 1 - "))
+        mark2 = int(input("Enter your marks in subject 2 - "))
+        mark3 = int(input("Enter your marks in subject 3 - "))
+        mark4 = int(input("Enter your marks in subject 4 - "))
+        mark5 = int(input("Enter your marks in subject 5 - "))
+    except ValueError :
+        print("Only enter numbers!") 
+        return
+
+    marks = [mark1,mark2,mark3,mark4,mark5]
+
+    add = sum(marks)
+    length = len(marks)
+    avg = add / length
+    print(f"The average of the entered marks is - {avg}")
+    print(f"The highest marks are - {max(marks)}")
+    print(f"The lowest are - {min(marks)}")
+
+    marks.sort()
+    marks.reverse()
+
+    print(f"The list in the descending order is - {marks}")
+
+manage_marks()
+
+#----------------------------------------------------------------------------------------------------------
+
