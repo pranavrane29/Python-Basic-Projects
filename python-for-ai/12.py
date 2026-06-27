@@ -86,16 +86,15 @@ class Student :
         self.name = name
         self.roll_no = roll_no
         self.marks_list = marks_list
-
-    def add_mark(self,mark) :
-        try :
-            if mark == str() :
-                raise TypeError
-            else :
+    
+    
+    try :
+        def add_mark(self,mark) :
                 self.marks_list.append(mark)
 
-        except TypeError :
+    except TypeError :
             print("Only numeric marks are allowed!")
+
 
     def get_average(self) :
         add = sum(self.marks_list)
@@ -120,6 +119,6 @@ except ValueError :
 marks_list = [mark1,mark2,mark3]
 s1 = Student("Pranav",16,marks_list)
 
-s1.add_mark(98)
+s1.add_mark(95)
 s1.get_average()
 s1.display_info()
