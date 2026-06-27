@@ -78,3 +78,48 @@ manage_marks()
 
 #----------------------------------------------------------------------------------------------------------
 
+
+# Q4. (OOP + Lists + Exception Handling)
+
+class Student :
+    def __init__(self,name,roll_no,marks_list):
+        self.name = name
+        self.roll_no = roll_no
+        self.marks_list = marks_list
+
+    def add_mark(self,mark) :
+        try :
+            if mark == str() :
+                raise TypeError
+            else :
+                self.marks_list.append(mark)
+
+        except TypeError :
+            print("Only numeric marks are allowed!")
+
+    def get_average(self) :
+        add = sum(self.marks_list)
+        length = len(self.marks_list)
+        avg = add / length
+        print(f"The average marks are - {avg}")
+
+    def display_info(self) :
+        print("The student info is as followed - ")
+        print(f"Name - {self.name}")
+        print(f"Roll_No - {self.roll_no}")
+        print(f"The marks in the list are as follows - {self.marks_list}")
+
+try :    
+    mark1 = int(input("Enter your marks in subject 1 - "))
+    mark2 = int(input("Enter your marks in subject 2 - "))
+    mark3 = int(input("Enter your marks in subject 3 - "))
+except ValueError :
+    print("Only enter numbers!") 
+
+
+marks_list = [mark1,mark2,mark3]
+s1 = Student("Pranav",16,marks_list)
+
+s1.add_mark(98)
+s1.get_average()
+s1.display_info()
