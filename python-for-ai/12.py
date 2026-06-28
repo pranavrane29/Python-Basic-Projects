@@ -187,3 +187,85 @@ while True:
         print("Enter correct values!")
 
 
+#----------------------------------------------------------------------------------------------------------
+
+# Q6. (Sets + Tuples + Modules)
+import random
+import math
+try:
+    print("Enter ten unique numbers - ")
+    numbers = set()
+    for i in range(1,11) :
+        num = int(input(f"Enter number - {i}"))
+        numbers.add(num)
+
+    numbers = tuple(numbers)
+
+    print(f"Random number 1 - {random.choice(numbers)}")
+    print(f"Random number 2 - {random.choice(numbers)}")
+    print(f"Random number 3 - {random.choice(numbers)}")
+
+    add = sum(numbers)
+
+    print(f"The square root of the sum of the tuple elements is - {math.sqrt(add):.2f}")
+
+
+except ValueError:
+    print("Enter only numbers!")
+
+
+#----------------------------------------------------------------------------------------------------------
+
+# Q7. (Lambda + range() + Lists + Exception Handling)
+
+square = lambda x : x ** 2 
+
+squares = list()
+for i in range(1,21) :
+    square_of_number = square(i)
+    squares.append(square_of_number)
+
+
+print("The square of the even numbers are -")
+for i in squares:
+    if i % 2 == 0:
+        print(i)
+
+
+
+#----------------------------------------------------------------------------------------------------------
+
+# Q8. (Tuples + Dictionaries + OOP)
+
+class Employee:
+    def __init__(self, emp_id, name, details):
+        self.emp_id = emp_id
+        self.name = name
+        self.details = details    
+
+    def show_details(self):
+        print(f"Employee ID: {self.emp_id}")
+        print(f"Their name: {self.name}")
+        print(f"Their Department: {self.details[0]}")   
+        print(f"Their Salary: {self.details[1]}")        
+
+
+employees = {}
+
+e1 = Employee(1, "Pranav", ("Engineering", 50000))
+e2 =Employee(2, "Gauri", ("Marketing", 45000))
+e3 =  Employee(3, "Rahul", ("HR", 40000))
+
+employees[1] = e1
+employees[2] = e2
+employees[3] = e3
+
+
+for emp_id, emp_object in employees.items():
+    print("="*30)
+    emp_object.show_details()
+
+
+
+#----------------------------------------------------------------------------------------------------------
+
