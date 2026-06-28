@@ -167,7 +167,7 @@ while True:
         if choice == "1":
             roll_no = int(input("Enter roll number: "))
             name = input("Enter name: ")
-            year = int(input("Enter year of study: "))
+            year = (input("Enter year of study: "))
             add_student(roll_no, name, year)
         
         elif choice == "2":
@@ -294,114 +294,116 @@ print(f"The square of the sum of all the unique number is - {math.sqrt(add):.2f}
 # Q10. (Mini Project - Comprehensive)
 import random
 import math
+try :
+    def basic_aritmetic() :
+        print("Welcome to basic calculator!")
 
-def basic_aritmetic() :
-    print("Welcome to basic calculator!")
+        operator = input("Select the task you want to perform (+,-,*,/)")
+            
+        num1 = int(input("Enter the first number -"))
+        num2 = int(input("Enter the second number -"))
 
-    operator = input("Select the task you want to perform (+,-,*,/)")
-        
-    num1 = int(input("Enter the first number -"))
-    num2 = int(input("Enter the second number -"))
-
-    if operator == "+" :
-        add = num1 + num2 
-        print(f"The addition of {num1} and {num2} is - {add}")
-    elif operator == "-" :
-        sub = num1 - num2
-        print(f"The subtraction of {num1} and {num2} is - {sub}")  
-    elif operator == "*" :
-        multiply = num1 * num2 
-        print(f"The multiplication of {num1} and {num2} is - {multiply}")
-    elif operator == "/" :
-        if num2 == 0 :
-          print("Cannot divide by 0")
-        else :  
-            div = num1 / num2
-            print(f"The division of {num1} and {num2} is - {div}")  
-
-
-def show_menu():
-    print("1) Basic Arithmetic")
-    print("2) Scientific Calculations")
-    print("3) Generate Random Numbers")
-    print("4) Store Result")
-    print("5) View History")
-    print("6) Exit")
-
-def scientific_calc() :
-    print("Welcome to Scientific calculator!")
-
-    print("Here's what you can do - ")
-    print("1)Find the square root of a number!")  # Fixed: "squarr" -> "square"
-    print("2)Find the ceiling value.")
-    print("3)Find the floor value")
-    print("4)Find the power of a number")
-    print("5)Find the factorial of a number.")
-    operator = input("Select the task you want to perform(1-5) -")
-        
-
-    if operator == "1" :
-        num = int(input("Enter a number to find its square root -"))
-        print(f"The square root of {num} is - {math.sqrt(num)}")
-
-    elif operator == "2" :
-        num = float(input("Enter a floating number - "))
-        print(f"The ceiling value of number {num} is - {math.ceil(num)} ")
-    elif operator == "3" :
-        num = float(input("Enter a floating number - "))
-        print(f"The floor value of number {num} is - {math.floor(num)} ")
-    elif operator == "4" :
-        base = int(input("Enter the base - "))
-        exp = int(input("Enter the exponention - "))
-        print(f"The power of the number {base} to {exp} is {math.pow(base,exp)}")
-    elif operator == "5" :
-        num = int(input("Enter a number to find it's factorial - "))
-        print(f"The factorial of the num {num} is - {math.factorial(num)}")
-    else :
-        print("Enter valid choice!")
+        if operator == "+" :
+            add = num1 + num2 
+            print(f"The addition of {num1} and {num2} is - {add}")
+        elif operator == "-" :
+            sub = num1 - num2
+            print(f"The subtraction of {num1} and {num2} is - {sub}")  
+        elif operator == "*" :
+            multiply = num1 * num2 
+            print(f"The multiplication of {num1} and {num2} is - {multiply}")
+        elif operator == "/" :
+            if num2 == 0 :
+               print("Cannot divide by 0")
+            else :  
+                div = num1 / num2
+                print(f"The division of {num1} and {num2} is - {div}")  
 
 
-def random_num_gen():
-    start = int(input("Enter start of range: "))
-    end = int(input("Enter end of range: "))
-    print(f"Random number: {random.randint(start, end)}")
+    def show_menu():
+        print("1) Basic Arithmetic")
+        print("2) Scientific Calculations")
+        print("3) Generate Random Numbers")
+        print("4) Store Result")
+        print("5) View History")
+        print("6) Exit")
 
-def store_result(result):
-    if result:
-        history[len(history) + 1] = result
-        print("Result stored successfully!")
-    else:
-        print("No valid result to store.")
+    def scientific_calc() :
+        print("Welcome to Scientific calculator!")
 
-def view_history():
-    if len(history) == 0:
-        print("No calculations yet")
-    else:
-        for key, value in history.items():
-            print(f"Calculation {key}: {value}")
-print("-"*20)
-print("___Welcome to smart calculator and data manager___")
-print("-"*20)
+        print("Here's what you can do - ")
+        print("1)Find the square root of a number!")  
+        print("2)Find the ceiling value.")
+        print("3)Find the floor value")
+        print("4)Find the power of a number")
+        print("5)Find the factorial of a number.")
+        operator = input("Select the task you want to perform(1-5) -")
+            
 
-history = {}  
-while True :
-    print("Things you can use - ")
-    show_menu()
-    choice = input("What do you want to do (1-6) -")
+        if operator == "1" :
+            num = int(input("Enter a number to find its square root -"))
+            print(f"The square root of {num} is - {math.sqrt(num)}")
 
-    if choice == "1" :
-        basic_aritmetic()
-    elif choice == "2" :
-        scientific_calc()
-    elif choice == "3" :
-        random_num_gen()
-    elif choice == "4" :
-        result = input("Enter the result you want to store - ")  # Fixed: was store_result() with no argument
-        store_result(result)
-    elif choice == "5" :
-        view_history()
-    elif choice == "6" :
-        print("Exiting...")
-        break
-    else :
-        print("Enter only from choice (1-6).")
+        elif operator == "2" :
+            num = float(input("Enter a floating number - "))
+            print(f"The ceiling value of number {num} is - {math.ceil(num)} ")
+        elif operator == "3" :
+            num = float(input("Enter a floating number - "))
+            print(f"The floor value of number {num} is - {math.floor(num)} ")
+        elif operator == "4" :
+            base = int(input("Enter the base - "))
+            exp = int(input("Enter the exponention - "))
+            print(f"The power of the number {base} to {exp} is {math.pow(base,exp)}")
+        elif operator == "5" :
+            num = int(input("Enter a number to find it's factorial - "))
+            print(f"The factorial of the num {num} is - {math.factorial(num)}")
+        else :
+            print("Enter valid choice!")
+
+
+    def random_num_gen():
+        start = int(input("Enter start of range: "))
+        end = int(input("Enter end of range: "))
+        print(f"Random number: {random.randint(start, end)}")
+
+    def store_result(result):
+        if result:
+            history[len(history) + 1] = result
+            print("Result stored successfully!")
+        else:
+            print("No valid result to store.")
+
+    def view_history():
+        if len(history) == 0:
+            print("No calculations yet")
+        else:
+            for key, value in history.items():
+                print(f"Calculation {key}: {value}")
+    print("-"*20)
+    print("___Welcome to smart calculator and data manager___")
+    print("-"*20)
+
+    history = {}  
+    while True :
+        print("Things you can use - ")
+        show_menu()
+        choice = input("What do you want to do (1-6) -")
+
+        if choice == "1" :
+            basic_aritmetic()
+        elif choice == "2" :
+            scientific_calc()
+        elif choice == "3" :
+            random_num_gen()
+        elif choice == "4" :
+            result = input("Enter the result you want to store - ")  
+            store_result(result)
+        elif choice == "5" :
+            view_history()
+        elif choice == "6" :
+            print("Exiting...")
+            break
+        else :
+            print("Enter only from choice (1-6).")
+except ValueError:
+print("Enter correct values.")
