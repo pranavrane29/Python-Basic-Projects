@@ -269,3 +269,22 @@ for emp_id, emp_object in employees.items():
 
 #----------------------------------------------------------------------------------------------------------
 
+
+# Q9. (Strings + Sets + Exception Handling + Modules)
+
+import math
+
+sentence = input("Enter a sentence - ")
+
+sentence = set(sentence) # All unique words will be extracted
+
+sentence = list(sentence)
+
+sentence.sort()
+
+print(f"The unique words in sorted order are - {sentence}")
+
+add = len(sentence)
+
+print(f"The square of the sum of all the unique number is - {math.sqrt(add):.2f}")
+
