@@ -122,3 +122,68 @@ s1 = Student("Pranav",16,marks_list)
 s1.add_mark(95)
 s1.get_average()
 s1.display_info()
+
+
+#----------------------------------------------------------------------------------------------------------
+
+#Q5. (Dictionaries + Functions + Control Structures)
+
+
+student_records = {}
+
+def add_student(roll_no, name, year):
+    student_records[roll_no] = {
+        "name": name,
+        "year": year
+    }
+    print(f"Student {name} added successfully")
+
+def search_student(roll_no):
+    student = student_records.get(roll_no)
+    if student:
+        print(f"Roll No: {roll_no}")
+        print(f"Name: {student['name']}")
+        print(f"Year: {student['year']}")
+    else:
+        print("Student not found!")
+
+def display_all():
+    if len(student_records) == 0:
+        print("No student to display!")
+    else:
+        for roll_no, details in student_records.items():
+            print(f"Roll No: {roll_no} | Name: {details['name']} | Year: {details['year']}")
+
+# Menu
+while True:
+    print("___ Student Management System ___")
+    print("1) Add a student")
+    print("2) Search a student")
+    print("3) Display all students")
+    print("4) Exit")
+    
+    choice = input("Select waht you want to do -  (1-4): ")
+    try :
+        if choice == "1":
+            roll_no = int(input("Enter roll number: "))
+            name = input("Enter name: ")
+            year = int(input("Enter year of study: "))
+            add_student(roll_no, name, year)
+        
+        elif choice == "2":
+            roll_no = int(input("Enter the roll number to search: "))
+            search_student(roll_no)
+        
+        elif choice == "3":
+            display_all()
+        
+        elif choice == "4":
+            print("Exiting...")
+            break
+        
+        else:
+            print("Invalid choice. Enter 1-4 only.")
+    except ValueError :
+        print("Enter correct values!")
+
+
