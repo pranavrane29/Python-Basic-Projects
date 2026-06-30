@@ -1,0 +1,10 @@
+P001|Laptop|Electronics|45000.0|5|2
+P002|USB Cable|Electronics|199.0|30|10
+P003|Headphones|Electronics|1500.0|3|5
+P004|Rice 5kg|FMCG|250.0|80|20
+P005|Cooking Oil 1L|FMCG|130.0|60|15
+P006|Soap Pack|FMCG|45.0|8|30
+P007|Notebook|Stationery|60.0|150|40
+P008|Pen Set|Stationery|35.0|200|50
+P233|Patanjali Biscut|Food\\|10.0|1000|1000
+A123|Raw Pumpkin Seeds|fmcg|60.0|70|50
