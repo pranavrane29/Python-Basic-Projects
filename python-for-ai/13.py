@@ -11,7 +11,7 @@ arr2d = np.array([[1,2,3],[4,5,6],[7,8,9]])
 print(f"First array is - {arr1d}")
 print(f"The shape and dtype of first array is - {arr1d.shape} and {arr1d.dtype} respectively!")
 print("-"*10)
-print(f"Second array is - {arr2d}")
+print(f"Second array is - \n{arr2d}")
 print(f"The shape and dtype of first array is - {arr2d.shape} and {arr2d.dtype} respectively!")
 
 
@@ -27,8 +27,8 @@ arr3 = np.zeros((3,3))  # A 3x3 matrix of zeros.
 
 
 print(f"A 1D array of 8 zeros is - {arr1}")
-print(f"A 2D array of shape (4, 4) filled with ones is - {arr2}")
-print(f"A 3x3 matrix of zeros is - {arr3}")
+print(f"A 2D array of shape (4, 4) filled with ones is - \n{arr2}")
+print(f"A 3x3 matrix of zeros is - \n{arr3}")
 
 
 #------------------------------------------------------------------------
@@ -57,10 +57,10 @@ ar1 = np.linspace(0,5,10)
 
 ar2 = np.linspace(-10,10,15)
 
-print(f"10 equally spaced numbers between 0 and 5. - {ar1}")
+print(f"10 equally spaced numbers between 0 and 5. - \n{ar1}")
 print(f"Its length is - {len(ar1)}")
 print("-"*20)
-print(f"15 equally spaced numbers between -10 and 10. - {ar2}")
+print(f"15 equally spaced numbers between -10 and 10. -\n {ar2}")
 print(f"Its length is - {len(ar2)}")
 
 
@@ -73,10 +73,10 @@ ar1 = np.random.rand(10)
 print(f"1D array of 10 random numbers is - {ar1}")
 
 ar2 = np.random.randn(3,3)
-print(f"A 3x3 matrix of random numbers is - {ar2}")
+print(f"A 3x3 matrix of random numbers is -\n {ar2}")
 
 ar3 = np.random.randint(10, 50, size=(4,5))
-print(f"A 2D array of random integers between 10 & 50 are - {ar3}")
+print(f"A 2D array of random integers between 10 & 50 are -\n {ar3}")
 
 #------------------------------------------------------------------------
 
@@ -108,16 +108,16 @@ print(f"The dot product of the two vectors is - {dot}")
 A = np.array([[1,2,3],[4,5,6],[7,8,9]])
 B = np.array([[9,8,7],[6,5,4],[3,2,1]])
 
-print(f"Array 1 = {A}")
-print(f"Array 2 = {B}")
+print(f"Array 1 = \n{A}")
+print(f"Array 2 = \n{B}")
 
 add = A + B
 dot = np.dot(A,B)
 mul = A * B
 
-print(f"The addition of the two arrays is - {add}")
-print(f"The matrix multiplication of the two arrays is - {dot}")
-print(f"The element-wise multiplication of the two arrays is - {mul}")
+print(f"The addition of the two arrays is - \n{add}")
+print(f"The matrix multiplication of the two arrays is - \n{dot}")
+print(f"The element-wise multiplication of the two arrays is - \n{mul}")
 
 
 #------------------------------------------------------------------------
@@ -126,11 +126,11 @@ print(f"The element-wise multiplication of the two arrays is - {mul}")
 
 ar = np.random.randint(1,100,size = (4,4))
 
-print(f"The Matrix is - {ar}")
+print(f"The Matrix is -\n {ar}")
 print(f"It's shape is - {ar.shape}")
 print(f"It's dimension is - {ar.ndim}")
 print(f"It's datatype is - {ar.dtype}")
-print(f"It's Minimum and Maximum value is - {ar.min} and {ar.max} respectively!")
+print(f"It's Minimum and Maximum value is - {ar.min()} and {ar.max()} respectively!")
 
 
 #------------------------------------------------------------------------
@@ -144,7 +144,7 @@ print(f"The original matrix - {ar}")
 
 ar_reshape = ar.reshape(4,5)
 
-print(f"After Reshaping it to 4x5, matrix becomes - {ar_reshape}")
+print(f"After Reshaping it to 4x5, matrix becomes - \n{ar_reshape}")
 
 print(f"The sum of the matrix is - {ar_reshape.sum()}")
 print(f"The mean of it is - {ar_reshape.mean()}")
@@ -179,7 +179,7 @@ try :
 
         # Row-wise sum
         row_sum = ar_reshape.sum(axis=1)
-        print("Row-wise Sum:")
+        print("Row-wise Sum :")
         print(row_sum)
     else:
         print("Cannot reshape due to the number of elements!")
