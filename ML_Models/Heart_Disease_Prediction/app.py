@@ -1,10 +1,13 @@
 import streamlit as st
 import pandas as pd
 import joblib
+from pathlib import Path
 
-model = joblib.load("heart_model.pkl")
-scaler = joblib.load("scaler.pkl")
-encoded_columns = joblib.load("columns.pkl")
+Base_Dir = Path(__file__).parent
+
+model = joblib.load(Base_Dir/"heart_model.pkl")
+scaler = joblib.load(Base_Dir/"scaler.pkl")
+encoded_columns = joblib.load(Base_Dir/"columns.pkl")
 
 st.set_page_config(
     page_title="Heart Disease Predictor",
